@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<users>
+    <user>
+        <nama>irfan</nama>
+        <posisi>bek</posisi>
+        <club>satria FC</club>
+    </user>
+    <user>
+        <nama>irfan2</nama>
+        <posisi>bek2</posisi>
+        <club>satria FC2</club>
+    </user>
+</users>
