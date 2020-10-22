@@ -23,8 +23,8 @@ import javax.xml.parsers.ParserConfigurationException;
 
 public class MainActivity extends AppCompatActivity {
     ArrayList<String> mNama = new ArrayList<>();
-    ArrayList<String> mPosisi = new ArrayList<>();
     ArrayList<String> mClub = new ArrayList<>();
+    ArrayList<String> mPosisi = new ArrayList<>();
     RecyclerView recyclerView;
 
     @Override
@@ -34,18 +34,17 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             InputStream istream = getAssets().open("userdata.xml");
-            DocumentBuilderFactory builderFactory =
-                    DocumentBuilderFactory.newInstance();
+            DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = builderFactory.newDocumentBuilder();
             Document doc = docBuilder.parse(istream);
             NodeList nList = doc.getElementsByTagName("user");
 
-            for (int i = 0;i <nList.getLength(); i++ ){
+            for (int i = 0; i < nList.getLength(); i++ ){
                 if (nList.item(0).getNodeType() == Node.ELEMENT_NODE){
                     Element elm = (Element) nList.item(i);
                     mNama.add(getNodeValue("nama",elm));
-                    mPosisi.add(getNodeValue("posisi",elm));
                     mClub.add(getNodeValue("club",elm));
+                    mPosisi.add(getNodeValue("posisi",elm));
                 }
             }
         } catch (Exception e) {
@@ -68,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
                 while (child != null){
                     if (child.getNodeType()== node.TEXT_NODE){
                         return  child.getNodeValue();
-
                     }
                 }
             }

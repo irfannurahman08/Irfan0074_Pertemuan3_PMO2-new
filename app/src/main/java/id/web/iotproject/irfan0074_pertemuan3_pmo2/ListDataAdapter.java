@@ -38,12 +38,13 @@ public class ListDataAdapter extends RecyclerView.Adapter<ListDataAdapter.MyHold
     public void onBindViewHolder(@NonNull MyHolder holder, final int position) {
         holder.tvNama.setText(mNama.get(position));
         holder.tvPosisi.setText(mPosisi.get(position));
-        holder.tvNama.setText(mClub.get(position));
+        holder.tvClub.setText(mClub.get(position));
 
         holder.layout_list_data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, mNama.get(position), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, mNama.get(position)+"\n"+ mPosisi.get(position) +"\n"+ mClub.get(position),
+                        Toast.LENGTH_SHORT).show();
             }
         });
 
